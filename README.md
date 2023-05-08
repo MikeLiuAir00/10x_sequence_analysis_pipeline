@@ -10,11 +10,11 @@
       
       - sample-index list
       
-          [10x genomics sample index list][1]
+  [10x genomics sample index list][1]
           
       - barcodes reads whitelist
       
-          [10x genomics barcode whitelist][2]
+  [10x genomics barcode whitelist][2]
      
       - download reference data with annotation and pre-built index
       

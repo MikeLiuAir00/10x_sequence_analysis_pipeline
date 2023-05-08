@@ -4,29 +4,29 @@
 
 ![img](./src/CTM2-12-e694-g005.jpg)
 
-    - download data
+- download data
     
-      - sample fastq
+    - sample fastq
       
-      - sample-index list
+    - sample-index list
       
-  [10x genomics sample index list][1]
+      - [10x genomics sample index list][1]
           
-      - barcodes reads whitelist
+- barcodes reads whitelist
       
-  [10x genomics barcode whitelist][2]
+      - [10x genomics barcode whitelist][2]
      
-      - download reference data with annotation and pre-built index
+ - download reference data with annotation and pre-built index
       
           Human genome reference hg38 with annotation .gff file
       
           Human genome reference hg19 with annotation .gff file(X chromosome only)
        
-    - Demultiplexing sample index and score-based quality control
+- Demultiplexing sample index and score-based quality control
     
     - Align(or align free), barcode + UMI extraction, Quantification
     
-        10x genomcis v2 '3: Read 1: 16 + 10(CB + UMI); Read 2: actual sequence 
+            10x genomcis v2 '3: Read 1: 16 + 10(CB + UMI); Read 2: actual sequence 
     
     - cell call, droplet-based quality control, normalization
     

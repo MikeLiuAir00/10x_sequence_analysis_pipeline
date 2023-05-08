@@ -10,11 +10,10 @@
       
       - sample-index list
       
-          ![10x genomics sample index                       list](https://www.10xgenomics.com/support/single-cell-gene-expression/documentation/steps/sequencing/sample-index-sets-for-single-cell-3)
-      
+          [10x genomics sample index list][1]
       - barcodes reads whitelist
-
-        ![10x genomics barcode whitelist](https://github.com/10XGenomics/cellranger/tree/master/lib/python/cellranger/barcodes)
+      
+          [10x genomics barcode whitelist][2]
      
       - download reference data with annotation and pre-built index
       
@@ -71,20 +70,6 @@
     - scanpy: downstream analysis
 
 
-
-
-Requirement:
-    <!-- salmon -->
-    <!-- alevin-fry -->
-    <!--     Single-Cell processing framework -->
-    <!-- simpleaf -->
-    <!--     Simplified cmd-line tool interface for alevin-fry -->
-    STARsolo or simpleaf
-        demultiplexing
-        quantification
-    MultiQC
-        Quality quality
-    Quality Count Matrix
         
     
 Question:
@@ -96,3 +81,6 @@ Question:
            - 3: read2
     
     
+[1]: (https://www.10xgenomics.com/support/single-cell-gene-expression/documentation/steps/sequencing/sample-index-sets-for-single-cell-3)
+      
+[2]: https://github.com/10XGenomics/cellranger/tree/master/lib/python/cellranger/barcodes

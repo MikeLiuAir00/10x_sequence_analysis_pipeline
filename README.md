@@ -11,6 +11,7 @@
       - sample-index list
       
           [10x genomics sample index list][1]
+          
       - barcodes reads whitelist
       
           [10x genomics barcode whitelist][2]
@@ -81,6 +82,6 @@ Question:
            - 3: read2
     
     
-[1]: (https://www.10xgenomics.com/support/single-cell-gene-expression/documentation/steps/sequencing/sample-index-sets-for-single-cell-3)
+[1]: https://www.10xgenomics.com/support/single-cell-gene-expression/documentation/steps/sequencing/sample-index-sets-for-single-cell-3
       
 [2]: https://github.com/10XGenomics/cellranger/tree/master/lib/python/cellranger/barcodes

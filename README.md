@@ -21,16 +21,23 @@
           Human genome reference hg38 with annotation .gff file
       
           Human genome reference hg19 with annotation .gff file(X chromosome only)
-       
+- Sample Index + UMI + Barcode based sample from original data
+
+    - Inspect sample index, UMI and barcode first
+      
 - Demultiplexing sample index and score-based quality control
+
+    - Demultiplexing: Cell Ranger's mkfastq or Illumina's bcl2fastq 
     
-    - Align(or align free), barcode + UMI extraction, Quantification
+- Align(or align free), barcode + UMI extraction, Quantification (/w kb_python)
     
-            10x genomcis v2 '3: Read 1: 16 + 10(CB + UMI); Read 2: actual sequence 
+    - 10x genomcis v2 '3: Read 1: 16 + 10(CB + UMI); Read 2: actual sequence
+    
+    - Filter the UMI + Barcode with quality-score > 10%, not homopolymers and carcode within 1-Hamming-distance. 
     
     - cell call, droplet-based quality control, normalization
     
-    - PCA analysis, clustering, marker gene extraction, differential analysis
+- PCA analysis, clustering, marker gene extraction, differential analysis(/w scanpy)
 
 
 ## scRNA Sequence Frameworks
@@ -66,7 +73,7 @@
     
     kallisto is an fast and alignment-free program for quantifying scRNA-seq data. 
     kb is a workflow for pre-processing scRNA-seq data. It's tutorial is integrated with both
-    Python and R code examples.
+    Python and R code examples. With python API
     
     - scanpy: downstream analysis
 
@@ -74,13 +81,7 @@
         
     
 Question:
-    use salmon
-    confirm the 10x reads
-        1. 3 files 
-           - 1: unknown 
-           - 2: barcode + UMI
-           - 3: read2
-    
+    How sample index works
     
 [1]: https://www.10xgenomics.com/support/single-cell-gene-expression/documentation/steps/sequencing/sample-index-sets-for-single-cell-3
       

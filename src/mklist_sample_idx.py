@@ -27,7 +27,7 @@ from pathlib import Path
 # Needed Path
 #   add config.py later
 HOME = str(Path.home())
-WORKING_DIR = HOME + "/Code/10x_sequence_analysis_pipeline/"
+IDX_DIR = HOME + "/Code/10x_sequence_analysis_pipeline/support/"
 OUT_DIR = HOME + "/Code/10x_sequence_analysis_pipeline/"
 
 
@@ -63,5 +63,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
 
-    with open(WORKING_DIR + args.sample_idx, "r") as sample_idx_csv:
+    with open(IDX_DIR + args.sample_idx, "r") as sample_idx_csv:
         flatten_csv(sample_idx_csv, OUT_DIR + args.out)

@@ -1,4 +1,5 @@
 ref_hg38
+./ref
 .pdf
 .fasta
 .gff

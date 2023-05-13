@@ -16,18 +16,30 @@
       
       - [10x genomics barcode whitelist][2]
      
- - download reference data with annotation and pre-built index
-      
-          Human genome reference hg38 with annotation .gff file
-      
-          Human genome reference hg19 with annotation .gff file(X chromosome only)
-- Sample Index + UMI + Barcode based sample from original data
+- (*Done*)download reference data with annotation and pre-built index
 
+    - download and build /w kb_python
+ 
+      
+- Sample Index + UMI + Barcode based sample from original data
+    
+    - 10x genomics Chromium v2 3' chemical UMI + Barcode position
+      
+      - sample index -> 8
+      
+      - CB + UMI -> 16 + 10 (26)
+      
+      - reads -> 98
+    
     - Inspect sample index, UMI and barcode first
       
 - Demultiplexing sample index and score-based quality control
 
-    - Demultiplexing: Cell Ranger's mkfastq or Illumina's bcl2fastq 
+    - reformat the sampel index .csv/.json file to meet software-wise requirement
+
+    - Demultiplexing: Cell Ranger's mkfastq or Illumina's bcl2fastq
+      
+      - for now demultiplex python software
     
 - Align(or align free), barcode + UMI extraction, Quantification (/w kb_python)
     
@@ -39,6 +51,19 @@
     
 - PCA analysis, clustering, marker gene extraction, differential analysis(/w scanpy)
 
+
+## Data
+
+- reference data: 
+    - Homo_sapiens.GRCh38.dna.chromosome.X.fa.gz
+    - Cell Ranger's config
+    - kb's repo
+      
+- annotation: 
+  - Homo_sapiens.GRCh38.109.gtf.gz
+  - Cell Ranger's config
+  - kb's repo
+    
 
 ## scRNA Sequence Frameworks
 

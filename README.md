@@ -2,7 +2,7 @@
 
 ## Pipeline
 
-![img](./src/CTM2-12-e694-g005.jpg)
+![img](./static/CTM2-12-e694-g005.jpg)
 
 - download data
     
@@ -73,7 +73,7 @@
     
     kallisto is an fast and alignment-free program for quantifying scRNA-seq data. 
     kb is a workflow for pre-processing scRNA-seq data. It's tutorial is integrated with both
-    Python and R code examples. With python API
+    Python and R code examples. With python api
     
     - scanpy: downstream analysis
 

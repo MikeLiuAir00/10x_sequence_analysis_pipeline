@@ -3,4 +3,6 @@ ref_hg38
 .pdf
 .fasta
 .gff
-data
+/data
+.ipynb_checkpoints/
+count_out/

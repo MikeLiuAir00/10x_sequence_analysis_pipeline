@@ -15,10 +15,14 @@
     - barcodes reads whitelist
       
       - [10x genomics barcode whitelist][2]
+      
+      - kb_python has built-in barcode whitelist. Check supported seq tech use `kb --list`.
      
 - download reference data with annotation and pre-built index
 
     - download and build /w kb_python
+    
+    - Or download pre-built index /w kb_python
  
       
 - Sample Index + UMI + Barcode based sample from original data

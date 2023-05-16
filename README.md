@@ -12,11 +12,11 @@
       
       - [10x genomics sample index list][1]
           
-- barcodes reads whitelist
+    - barcodes reads whitelist
       
       - [10x genomics barcode whitelist][2]
      
-- (*Done*)download reference data with annotation and pre-built index
+- download reference data with annotation and pre-built index
 
     - download and build /w kb_python
  

@@ -7,6 +7,8 @@
 - download data
     
     - sample fastq
+    
+      The result generated are all based on patient PBMC data(run:SRR7722942)
       
     - sample-index list
       
@@ -23,9 +25,12 @@
     - download and build /w kb_python
     
     - Or download pre-built index /w kb_python
+      
+      The current result is based on pre-built index from kb_python. The pre-built index is based on Ensembl v96
+      transcriptome.
  
       
-- Sample Index + UMI + Barcode based sample from original data
+- Inspecting Sample Index + UMI + Barcode based sample from original data
     
     - 10x genomics Chromium v2 3' chemical UMI + Barcode position
       
@@ -35,7 +40,6 @@
       
       - reads -> 98
     
-    - Inspect sample index, UMI and barcode first
       
 - Demultiplexing sample index and score-based quality control
 
@@ -44,29 +48,33 @@
     - Demultiplexing: Cell Ranger's mkfastq or Illumina's bcl2fastq
       
       - for now demultiplex python software
+        
+        Since the sample data are all from the same sample index, demultiplexing only generate one file(SI-GA-A6)
     
 - Align(or align free), barcode + UMI extraction, Quantification (/w kb_python)
     
     - 10x genomcis v2 '3: Read 1: 16 + 10(CB + UMI); Read 2: actual sequence
     
-    - Filter the UMI + Barcode with quality-score > 10%, not homopolymers and carcode within 1-Hamming-distance. 
+    - Filter the UMI + Barcode with quality-score > 10%, not homopolymers and carcode within 1-Hamming-distance(done by bustools correct). 
     
-    - cell call, droplet-based quality control, normalization
     
 - PCA analysis, clustering, marker gene extraction, differential analysis(/w scanpy)
 
+  - cell call, droplet-based quality control
+    
+    The cells are filtered based on umi count and knee point
+  
+  - Nornmalization
+    
+    Normalize each cell by total counts over all genes(implement the methods mentioned in paper next)
+    
+  - Highly variable genes are detected with scanpy function
+  
+  - Clustering , PCA and tSNE
+  
+    The data are then clustered with louvain method. tSNE visualized top 10 pcs in 2d space.
 
-## Data
-
-- reference data: 
-    - Homo_sapiens.GRCh38.dna.chromosome.X.fa.gz
-    - Cell Ranger's config
-    - kb's repo
       
-- annotation: 
-  - Homo_sapiens.GRCh38.109.gtf.gz
-  - Cell Ranger's config
-  - kb's repo
     
 
 ## scRNA Sequence Frameworks
@@ -75,42 +83,40 @@
 
 ### starSolo + MultiQC + DropletUtils + seurat
 
-    - starSolo: Demultiplexing, Alignment, quantification
+  - starSolo: Demultiplexing, Alignment, quantification
     
     starSolo is an alternative to Cell Ranger, which integrated cell call pipeline.
     
-    - MultiQC: quality report
-    - DropletUtils:  quality control(score-based, droplet-based)
-    - seurat: downstream analysis(clustering...)
+  - MultiQC: quality report
+  - DropletUtils:  quality control(score-based, droplet-based)
+  - seurat: downstream analysis(clustering...)
  
     
 ### salmon(alevin + simpleaf) + scanpy
     
-    - alevin + simpleaf: demultiplexing, aligner, quantification
+  - alevin + simpleaf: demultiplexing, aligner, quantification
     
     salmon based framwork, features its quick and memory-saving aligner and alignment free
     quantification method.
         
-    - scanpy: downstream analysis
+  - scanpy: downstream analysis
       
     scanpy is an alternative scRNA seq analysis Python package to Seurat, which is in R.
 
 
-### Kallisto + bustools + scanpy
+### Kallisto + bustools + scanpy (current)
 
-    - kallisto + bustools(kb): demultiplexing, aligner, quantification
+  - kallisto + bustools(kb): demultiplexing, aligner, quantification
     
-    kallisto is an fast and alignment-free program for quantifying scRNA-seq data. 
-    kb is a workflow for pre-processing scRNA-seq data. It's tutorial is integrated with both
-    Python and R code examples. With python api
+    kallisto is an fast and alignment-free program for quantifying scRNA-seq data.
+    bustools is .bus file(binary) manipulation module
+    kb is a Python module which provide workflow built with kallisto and bustools for pre-processing scRNA-seq data.  
     
-    - scanpy: downstream analysis
+  - scanpy: downstream analysis
 
 
         
     
-Question:
-    How sample index works
     
 [1]: https://www.10xgenomics.com/support/single-cell-gene-expression/documentation/steps/sequencing/sample-index-sets-for-single-cell-3
       

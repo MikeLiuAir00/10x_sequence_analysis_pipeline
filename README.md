@@ -66,13 +66,15 @@
   
   - Nornmalization
     
-    Normalize each cell by total counts over all genes(implement the methods mentioned in paper next)
+    Normalization is performed as described below:
+      
+    UMI counts were scaled by the total number of UMI in each cell and multiplied by the median of the total UMI counts across cells. The data were then log2-transformed
     
   - Highly variable genes are detected with scanpy function
   
   - Clustering , PCA and tSNE
   
-    The data are then clustered with louvain method. tSNE visualized top 10 pcs in 2d space.
+    The data are then clustered with louvain method with resolution = 0.6. tSNE visualized top 10 pcs in 2d space.
 
       
     

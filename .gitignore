@@ -5,4 +5,7 @@ ref_hg38
 .gff
 /data
 .ipynb_checkpoints/
-count_out/
+count_out/*.bus
+count_out/*.txt
+count_out/*.ec
+count_out/counts_unfiltered

@@ -27,7 +27,7 @@
     - Or download pre-built index /w kb_python
       
       The current result is based on pre-built index from kb_python. The pre-built index is based on Ensembl v96
-      transcriptome.
+      transcriptome.(GRCh38.p12)
  
       
 - Inspecting Sample Index + UMI + Barcode based sample from original data
@@ -55,7 +55,9 @@
     
     - 10x genomcis v2 '3: Read 1: 16 + 10(CB + UMI); Read 2: actual sequence
     
-    - Filter the UMI + Barcode with quality-score > 10%, not homopolymers and carcode within 1-Hamming-distance(done by bustools correct). 
+    - Filter the UMI + Barcode with quality-score > 10%, not homopolymers and carcode within 1-Hamming-distance(done by bustools correct).
+    
+    - Quantification is done with kb count command. The pipeline detail is in [here](./count_out/kb_info.json) 
     
     
 - PCA analysis, clustering, marker gene extraction, differential analysis(/w scanpy)

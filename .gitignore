@@ -5,7 +5,15 @@ ref_hg38
 .gff
 /data
 .ipynb_checkpoints/
+
+# result folders
+# exclude mtx and other bulky files
 count_out/*.bus
 count_out/*.txt
 count_out/*.ec
 count_out/counts_unfiltered
+
+count_out_*/*.bus
+count_out_*/*.txt
+count_out_*/*.ec
+count_out_*/counts_unfiltered

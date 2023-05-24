@@ -1,0 +1,40 @@
+{
+    "workdir": "/Users/liu.yak/Code/10x_sequence_analysis_pipeline/src",
+    "version": "0.27.3",
+    "kallisto": {
+        "path": "/Users/liu.yak/anaconda3/envs/bioinfo/lib/python3.10/site-packages/kb_python/bins/darwin/kallisto/kallisto",
+        "version": "0.48.0"
+    },
+    "bustools": {
+        "path": "/Users/liu.yak/anaconda3/envs/bioinfo/lib/python3.10/site-packages/kb_python/bins/darwin/bustools/bustools",
+        "version": "0.41.0"
+    },
+    "start_time": "2023-05-21T05:28:48.243353",
+    "end_time": "2023-05-21T08:04:01.049655",
+    "elapsed": 9312.806302,
+    "call": "/Users/liu.yak/anaconda3/envs/bioinfo/bin/kb count -i /Users/liu.yak/Code/10x_sequence_analysis_pipeline/ref/index_kb.idx -g /Users/liu.yak/Code/10x_sequence_analysis_pipeline/ref/t2g_kb.txt -x 10xv2 --h5ad --umi-gene --mm -o /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942 -t 4 -m 4G --gene-names --report --overwrite --verbose /Users/liu.yak/Code/10x_sequence_analysis_pipeline/data/fastq/dumped/SRR7722942_2.fastq /Users/liu.yak/Code/10x_sequence_analysis_pipeline/data/fastq/dumped/SRR7722942_3.fastq",
+    "commands": [
+        "kallisto bus -i /Users/liu.yak/Code/10x_sequence_analysis_pipeline/ref/index_kb.idx -o /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942 -x 10xv2 -t 4 /Users/liu.yak/Code/10x_sequence_analysis_pipeline/data/fastq/dumped/SRR7722942_2.fastq /Users/liu.yak/Code/10x_sequence_analysis_pipeline/data/fastq/dumped/SRR7722942_3.fastq",
+        "bustools inspect /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/output.bus",
+        "bustools sort -o /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/tmp/output.s.bus -T /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/tmp -t 4 -m 4G /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/output.bus",
+        "bustools inspect /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/tmp/output.s.bus",
+        "bustools inspect -o /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/inspect.json -w /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/10x_version2_whitelist.txt /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/tmp/output.s.bus",
+        "bustools correct -o /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/tmp/output.s.c.bus -w /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/10x_version2_whitelist.txt /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/tmp/output.s.bus",
+        "bustools inspect /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/tmp/output.s.c.bus",
+        "bustools sort -o /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/output.unfiltered.bus -T /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/tmp -t 4 -m 4G /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/tmp/output.s.c.bus",
+        "bustools inspect /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/output.unfiltered.bus",
+        "bustools count -o /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/counts_unfiltered/cells_x_genes -g /Users/liu.yak/Code/10x_sequence_analysis_pipeline/ref/t2g_kb.txt -e /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/matrix.ec -t /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/transcripts.txt --genecounts --multimapping --umi-gene /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942/output.unfiltered.bus"
+    ],
+    "runtimes": [
+        4788.966639757156,
+        2.685163974761963,
+        6.64094614982605,
+        2.1311471462249756,
+        2.337329149246216,
+        2.678800106048584,
+        2.022017002105713,
+        5.292918920516968,
+        2.0255181789398193,
+        8.625309944152832
+    ]
+}

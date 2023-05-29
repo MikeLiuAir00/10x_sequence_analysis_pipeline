@@ -47,7 +47,7 @@
 
     - Demultiplexing: Cell Ranger's mkfastq or Illumina's bcl2fastq
       
-      - for now demultiplex python software
+      - demultiplex python software is used
         
         Since the sample data are all from the same sample index, demultiplexing only generate one file(SI-GA-A6)
     
@@ -57,22 +57,40 @@
     
     - Filter the UMI + Barcode with quality-score > 10%, not homopolymers and carcode within 1-Hamming-distance(done by bustools correct).
     
-    - Quantification is done with kb count command. The pipeline detail is in [here](./count_out/kb_info.json) 
+    - Quantification is done with kb count command. The pipeline detail is in [here](./count_out/kb_info.json)
+    
+
+- Filtering(/w Scanpy)
+
+   - Cell filtering
+   
+     1. at least 200 genes expressed in each cell
+     
+     2. no more than 2500 genes expressed in each cell
+     
+     3. at most 5% mitochondrial content in each cell
+   
+   - Gene filtering
+   
+     1. genes must expreessed in at least 1 cell
+     
+     2. at least 1 umi count contribute to the expressed gene
+     
+        
+
+- Nornmalization and Scaling
+    
+  - Normalization is performed as described below:
+      
+    UMI counts were scaled by the total number of UMI in each cell and multiplied by the median of the total UMI counts across cells. The data  were then log2-transformed
+    
+  - Highly variable genes are detected by scanpy function /highly_variable_genes/ with min mean = 0.0125 and min dispersion = 0.5 
+  
+  
+  
     
     
 - PCA analysis, clustering, marker gene extraction, differential analysis(/w scanpy)
-
-  - cell call, droplet-based quality control
-    
-    The cells are filtered based on umi count and knee point
-  
-  - Nornmalization
-    
-    Normalization is performed as described below:
-      
-    UMI counts were scaled by the total number of UMI in each cell and multiplied by the median of the total UMI counts across cells. The data were then log2-transformed
-    
-  - Highly variable genes are detected with scanpy function
   
   - Clustering , PCA and tSNE
   

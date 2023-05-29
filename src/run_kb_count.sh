@@ -2,10 +2,17 @@
 
 ref_dir="$HOME/Code/10x_sequence_analysis_pipeline/ref"
 working_dir="$HOME/Code/10x_sequence_analysis_pipeline"
-samples="SRR7722938 SRR7722942"
+samples="SRR7722938 SRR7722939 SRR7722940 SRR7722941 SRR7722942"
 
 for sample in $samples; do
 
+    # skip quantified samples
+    if [[ -e "$working_dir/count_out_$sample" ]]; then
+        echo "$sample exist, skip"
+        continue
+    fi
+
+    # run kb count
     kb count \
     -i "$ref_dir/index_kb.idx" \
     -g "$ref_dir/t2g_kb.txt" \
@@ -17,6 +24,7 @@ for sample in $samples; do
     -m 4G \
     --gene-names\
     --report \
+    --keep-tmp \
     --overwrite \
     --verbose \
     "$working_dir/data/fastq/dumped/${sample}_2.fastq" \

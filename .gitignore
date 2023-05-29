@@ -3,6 +3,7 @@ ref_hg38
 .pdf
 .fasta
 .gff
+.h5ad
 /data
 .ipynb_checkpoints/
 

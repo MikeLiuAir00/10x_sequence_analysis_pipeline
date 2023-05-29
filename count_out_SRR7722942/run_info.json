@@ -1,5 +1,5 @@
 {
-	"n_targets": 75312806,
+	"n_targets": 9436838,
 	"n_bootstraps": 0,
 	"n_processed": 24451006,
 	"n_pseudoaligned": 15846981,
@@ -7,7 +7,7 @@
 	"p_pseudoaligned": 64.8,
 	"p_unique": 13.7,
 	"kallisto_version": "0.48.0",
-	"index_version": 218469415,
-	"start_time": "Sun May 21 05:44:30 2023",
+	"index_version": 86848551,
+	"start_time": "Sat May 27 15:15:10 2023",
 	"call": "/Users/liu.yak/anaconda3/envs/bioinfo/lib/python3.10/site-packages/kb_python/bins/darwin/kallisto/kallisto bus -i /Users/liu.yak/Code/10x_sequence_analysis_pipeline/ref/index_kb.idx -o /Users/liu.yak/Code/10x_sequence_analysis_pipeline/count_out_SRR7722942 -x 10xv2 -t 4 /Users/liu.yak/Code/10x_sequence_analysis_pipeline/data/fastq/dumped/SRR7722942_2.fastq /Users/liu.yak/Code/10x_sequence_analysis_pipeline/data/fastq/dumped/SRR7722942_3.fastq"
 }

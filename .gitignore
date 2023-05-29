@@ -1,9 +1,10 @@
 ref_hg38
 /ref
-.pdf
-.fasta
-.gff
-.h5ad
+*.pdf
+*.csv
+*.fasta
+*.gff
+*.h5ad
 /data
 .ipynb_checkpoints/
 

@@ -1,12 +1,17 @@
-ref_hg38
 /ref
 *.pdf
 *.csv
 *.fasta
 *.gff
 *.h5ad
-/data
+*_err.txt
+*_out.txt
 .ipynb_checkpoints/
+/data
+/count_out_*
+ref_hg38
+note.md
+.DS_Store
 
 # result folders
 # exclude mtx and other bulky files
